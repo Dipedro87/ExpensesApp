@@ -47,9 +47,52 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-            Card(
-              child: Text('Lista de Transações'),
-            ),
+            Column(
+              children: _transaction.map((tr) {
+                return Card(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 15,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          color: Colors.purple,
+                          width: 2,
+                        )),
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          'R\$ ${tr.value.toStringAsFixed(2)}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.purple,
+                          ),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tr.title,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            tr.date.toString(),
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              }).toList(),
+            )
           ],
         ));
   }
