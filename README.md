@@ -1,6 +1,6 @@
 # expenses_app
 
-A new Flutter project.
+Projeto criado com o intúito de praticar os conhecimentos em Flutter/Dart e seus Widgets com a aplicação de lógicas e conceitos. 
 
 ## Getting Started
 
